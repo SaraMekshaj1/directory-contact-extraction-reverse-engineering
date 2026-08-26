@@ -1,6 +1,6 @@
 from __future__ import annotations
 import re
-from typing import Optional
+from typing import Optional,Any
 
 
 class PhoneNormalizer:
@@ -38,3 +38,16 @@ class TextNormalizer:
             return value
         value = self._tag_re.sub("", value)
         return re.sub(r"\s+", " ", value).strip()
+
+
+class EmailNormalizer:
+    """Lowercases and trims an email address. Returns None for anything
+    that doesn't look like an email (defensive — mailto hrefs occasionally
+    contain garbage or are missing entirely)."""
+
+    _PATTERN = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
+    def normalize(self, value: Any) -> Optional[str]:
+        if not value:
+            return None
+        text = str(value).strip().lower()
+        return text if self._PATTERN.match(text) else None

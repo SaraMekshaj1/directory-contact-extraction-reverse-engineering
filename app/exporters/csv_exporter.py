@@ -23,7 +23,7 @@ class CsvExporter(BaseExporter):
     def open(self) -> None:
         self.output_path.parent.mkdir(parents=True, exist_ok=True)
         file_exists = self.output_path.exists() and self.output_path.stat().st_size > 0
-        self._file = self.output_path.open("a", newline="", encoding="utf-8")
+        self._file = self.output_path.open("a", newline="", encoding="utf-8-sig")
         if self.fieldnames:
             self._writer = csv.DictWriter(self._file, fieldnames=self.fieldnames)
             if not file_exists:

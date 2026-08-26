@@ -4,7 +4,7 @@ from typing import Any
 from app.abstraction.base_hit_parser import BaseHitParser
 from app.exceptions.scraper_exceptions import ParseError
 from app.models.item import Item
-from app.normalizer.field_normalizer import PhoneNormalizer, TextNormalizer
+from app.normalizer.field_normalizer import PhoneNormalizer, TextNormalizer, EmailNormalizer
 
 ALLOWED_COUNTRIES = {"US", "CA"}
 def _strip_html(value):
@@ -16,6 +16,7 @@ class ItemParser(BaseHitParser):
     def __init__(self):
         self._phone_normalizer = PhoneNormalizer()
         self._text_normalizer = TextNormalizer()
+        self._email_normalizer= EmailNormalizer()
 
     def parse(self, raw_record: dict[str, Any]) -> Item:
         try:
@@ -27,7 +28,7 @@ class ItemParser(BaseHitParser):
             return Item(
                 id=trainer_id,
                 full_name=self._text_normalizer.normalize(name),
-                email=raw_record.get("user_email") or raw_record.get("user_email2"),
+                email=self._email_normalizer.normalize(raw_record.get("user_email")) or self._email_normalizer.normalize(raw_record.get("user_email2")),
                 phone=self._phone_normalizer.normalize(raw_record.get("phone_number")),
                 company=self._text_normalizer.normalize(raw_record.get("company")),
                 job_title=self._text_normalizer.normalize(raw_record.get("job_title")),

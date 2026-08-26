@@ -1,25 +1,25 @@
-2026-08-26 11:37:13,017 [INFO] scraper: Scrape started.
-2026-08-26 11:37:17,669 [INFO] scraper: Fetched 1758 total records from API
-2026-08-26 11:37:17,675 [INFO] scraper: Exported batch of 100 items
-2026-08-26 11:37:17,682 [INFO] scraper: Exported batch of 100 items
-2026-08-26 11:37:17,698 [INFO] scraper: Exported batch of 100 items
-2026-08-26 11:37:17,707 [INFO] scraper: Exported batch of 100 items
-2026-08-26 11:37:17,718 [INFO] scraper: Exported batch of 100 items
-2026-08-26 11:37:17,731 [INFO] scraper: Exported batch of 100 items
-2026-08-26 11:37:17,743 [INFO] scraper: Exported batch of 100 items
-2026-08-26 11:37:17,753 [INFO] scraper: Exported batch of 100 items
-2026-08-26 11:37:17,763 [INFO] scraper: Exported batch of 100 items
-2026-08-26 11:37:17,774 [INFO] scraper: Exported batch of 100 items
-2026-08-26 11:37:17,785 [INFO] scraper: Exported batch of 100 items
-2026-08-26 11:37:17,787 [INFO] scraper: Exported batch of 16 items
-2026-08-26 11:37:17,793 [INFO] scraper: Dedup state saved: 1116 known keys
-2026-08-26 11:37:17,794 [INFO] scraper: === FINAL REPORT ===
-2026-08-26 11:37:17,795 [INFO] scraper: Outcome             : COMPLETED
-2026-08-26 11:37:17,795 [INFO] scraper: Expected records    : 1116
-2026-08-26 11:37:17,795 [INFO] scraper: Records scraped     : 1116
-2026-08-26 11:37:17,796 [INFO] scraper: Coverage            : 100.0%
-2026-08-26 11:37:17,796 [INFO] scraper: Requests sent       : 1
-2026-08-26 11:37:17,797 [INFO] scraper: Duplicates skipped  : 0
-2026-08-26 11:37:17,797 [INFO] scraper: Records failed      : 0
-2026-08-26 11:37:17,797 [INFO] scraper: Elapsed             : 4.78s
-2026-08-26 11:37:17,798 [INFO] scraper: Run finished: outcome=COMPLETED, exported=1116
+2026-08-26 21:39:28,100 [INFO] scraper: Scrape started.
+2026-08-26 21:39:30,842 [INFO] scraper: Fetched 1758 total records from API
+2026-08-26 21:39:30,849 [INFO] scraper: Exported batch of 100 items
+2026-08-26 21:39:30,853 [INFO] scraper: Exported batch of 100 items
+2026-08-26 21:39:30,858 [INFO] scraper: Exported batch of 100 items
+2026-08-26 21:39:30,862 [INFO] scraper: Exported batch of 100 items
+2026-08-26 21:39:30,867 [INFO] scraper: Exported batch of 100 items
+2026-08-26 21:39:30,871 [INFO] scraper: Exported batch of 100 items
+2026-08-26 21:39:30,877 [INFO] scraper: Exported batch of 100 items
+2026-08-26 21:39:30,881 [INFO] scraper: Exported batch of 100 items
+2026-08-26 21:39:30,885 [INFO] scraper: Exported batch of 100 items
+2026-08-26 21:39:30,891 [INFO] scraper: Exported batch of 100 items
+2026-08-26 21:39:30,894 [INFO] scraper: Exported batch of 100 items
+2026-08-26 21:39:30,895 [INFO] scraper: Exported batch of 16 items
+2026-08-26 21:39:30,899 [INFO] scraper: Dedup state saved: 1116 known keys
+2026-08-26 21:39:30,900 [INFO] scraper: === FINAL REPORT ===
+2026-08-26 21:39:30,900 [INFO] scraper: Outcome             : COMPLETED
+2026-08-26 21:39:30,900 [INFO] scraper: Expected records    : 1116
+2026-08-26 21:39:30,901 [INFO] scraper: Records scraped     : 1116
+2026-08-26 21:39:30,901 [INFO] scraper: Coverage            : 100.0%
+2026-08-26 21:39:30,901 [INFO] scraper: Requests sent       : 1
+2026-08-26 21:39:30,901 [INFO] scraper: Duplicates skipped  : 0
+2026-08-26 21:39:30,901 [INFO] scraper: Records failed      : 0
+2026-08-26 21:39:30,902 [INFO] scraper: Elapsed             : 2.80s
+2026-08-26 21:39:30,902 [INFO] scraper: Run finished: outcome=COMPLETED, exported=1116
