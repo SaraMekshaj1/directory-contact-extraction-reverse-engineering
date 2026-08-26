@@ -1,13 +1,3 @@
-"""
-Composition root. This is the ONLY file that should import concrete
-implementations and wire them together. Everything else in `app/` depends
-only on the abstractions (BaseApiClient, BaseCheckpointStore, etc) or on
-plain dataclasses.
-
-To swap an implementation (e.g. GenericApiClient -> BrowserBackedApiClient,
-or add a Postgres exporter alongside CSV/JSON), change it here and nowhere
-else.
-"""
 from __future__ import annotations
 import logging
 from app.client.generic_api_client import GenericApiClient
@@ -23,8 +13,6 @@ from app.services.export_service import ExportService
 from app.services.fetch_service import FetchService
 from app.storage.failed_item_store import FailedItemStore
 from app.utils.logger import setup_logger
-
-
 class Container:
     def __init__(self, settings: Settings | None = None) -> None:
         self.settings = settings or Settings()

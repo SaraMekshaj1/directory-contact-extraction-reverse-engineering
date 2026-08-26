@@ -1,7 +1,6 @@
 from __future__ import annotations
 import logging
 from typing import Any, Iterator
-
 from app.abstraction.base_api_client import BaseApiClient
 from app.abstraction.base_hit_parser import BaseHitParser
 from app.config.settings import Settings
@@ -10,8 +9,6 @@ from app.monitoring.scrape_statistics import ScrapeStatistics
 from app.storage.failed_item_store import FailedItemStore
 
 ALLOWED_COUNTRIES = {"US", "CA"}
-
-
 class FetchService:
     def __init__(
         self,

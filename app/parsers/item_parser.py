@@ -4,15 +4,19 @@ from typing import Any
 from app.abstraction.base_hit_parser import BaseHitParser
 from app.exceptions.scraper_exceptions import ParseError
 from app.models.item import Item
+from app.normalizer.field_normalizer import PhoneNormalizer, TextNormalizer
 
 ALLOWED_COUNTRIES = {"US", "CA"}
-
 def _strip_html(value):
     if not value:
         return value
     return re.sub(r"<[^>]+>", "", value).strip()
 
 class ItemParser(BaseHitParser):
+    def __init__(self):
+        self._phone_normalizer = PhoneNormalizer()
+        self._text_normalizer = TextNormalizer()
+
     def parse(self, raw_record: dict[str, Any]) -> Item:
         try:
             trainer_id = str(raw_record.get("id", ""))
@@ -22,11 +26,11 @@ class ItemParser(BaseHitParser):
 
             return Item(
                 id=trainer_id,
-                full_name=name,
+                full_name=self._text_normalizer.normalize(name),
                 email=raw_record.get("user_email") or raw_record.get("user_email2"),
-                phone=_strip_html(raw_record.get("phone_number")),
-                company=_strip_html(raw_record.get("company")),
-                job_title=_strip_html(raw_record.get("job_title")),
+                phone=self._phone_normalizer.normalize(raw_record.get("phone_number")),
+                company=self._text_normalizer.normalize(raw_record.get("company")),
+                job_title=self._text_normalizer.normalize(raw_record.get("job_title")),
                 address=raw_record.get("address"),
                 city=raw_record.get("city"),
                 state=raw_record.get("state"),

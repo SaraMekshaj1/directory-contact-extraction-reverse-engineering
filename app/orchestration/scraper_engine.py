@@ -1,7 +1,5 @@
 from __future__ import annotations
-
 import logging
-
 from app.models.run_outcome import RunOutcome
 from app.monitoring.run_monitor import RunMonitor
 from app.monitoring.scrape_statistics import ScrapeStatistics
@@ -10,18 +8,9 @@ from app.services.export_service import ExportService
 from app.services.fetch_service import FetchService
 
 BATCH_SIZE = 100
-
-
 class ScraperEngine:
     """Thin coordinator: begin_run -> fetch -> dedup -> export -> end_run.
-
-    This is the ONE orchestrator file for the project -- brand discovery,
-    per-page crawling, and total-count lookups all live inside
-    FetchService (the "adapt per project" file); this class stays generic
-    and just wires monitoring around the same fetch -> dedup -> export
-    loop the base skeleton uses.
     """
-
     def __init__(
         self,
         fetch_service: FetchService,
